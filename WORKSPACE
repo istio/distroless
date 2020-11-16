@@ -105,6 +105,16 @@ load(
             "readline-common",
             "tzdata",
 
+            #custom
+            "iptables",
+            "libiptc0",
+            "libip4tc0",
+            "libip6tc0",
+            "libxtables12",
+            "libnfnetlink0",
+            "libnetfilter-conntrack3",
+            "libmnl0",
+
             #c++
             "libgcc1",
             "libgomp1",
@@ -209,6 +219,9 @@ load(
             "netbase",
             "readline-common",
             "tzdata",
+
+            #custom
+            "iptables",
 
             #c++
             "libgcc1",

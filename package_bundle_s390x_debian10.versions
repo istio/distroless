@@ -5,6 +5,7 @@
     "dash": "0.5.10.2-5",
     "fontconfig-config": "2.13.1-2",
     "fonts-dejavu-core": "2.37-1",
+    "iptables": "1.8.2-4",
     "libacl1": "2.2.53-4",
     "libattr1": "1:2.4.48-4",
     "libbz2-1.0": "1.0.6-9.2~deb10u1",
