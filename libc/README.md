@@ -9,9 +9,10 @@ Currently this builds only the `nonroot`, `debian11` variants. However, all arch
 ## Build + Publish
 
 ```shell
-export HUB=gcr.io/istio-release
+export HUB=gcr.io/istio-release/distroless
 # Build and publish the docker images
+bazel build //package_manager:dpkg_parser.par
 bazel run '//libc:publish' --define HUB=${HUB}
 # Create a fat manifest with all architectures and publish
-./istiobuild_docker.sh
+./libc/build_docker.sh
 ```

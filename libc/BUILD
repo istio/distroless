@@ -11,7 +11,7 @@ load("//:checksums.bzl", "ARCHITECTURES")
         architecture = arch,
         base = "//base:base" + "_" + "nonroot" + "_" + arch + "_debian11",
         debs = [
-            DISTRO_PACKAGES[arch][distro_suffix]["libc6"],
+            DISTRO_PACKAGES[arch]["_debian11"]["libc6"],
         ],
     )
     for arch in ARCHITECTURES
