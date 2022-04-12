@@ -1,6 +1,6 @@
 package(default_visibility = ["//visibility:public"])
 
-load("//base:distro.bzl", "DISTRO_PACKAGES", "DISTRO_SUFFIXES")
+load("//base:base.bzl", "deb_file")
 load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_bundle")
 load("//:checksums.bzl", "ARCHITECTURES")
 
@@ -12,16 +12,16 @@ load("//:checksums.bzl", "ARCHITECTURES")
         base = "//base:static" + "_" + "nonroot" + "_" + arch + "_debian11",
         debs = [
             # libc
-            DISTRO_PACKAGES[arch]["_debian11"]["libc6"],
+            deb_file(arch, "debian11", "libc6"),
 
             # iptables
-            DISTRO_PACKAGES[arch]["_debian11"]["iptables"],
-            DISTRO_PACKAGES[arch]["_debian11"]["libip4tc2"],
-            DISTRO_PACKAGES[arch]["_debian11"]["libip6tc2"],
-            DISTRO_PACKAGES[arch]["_debian11"]["libxtables12"],
-            DISTRO_PACKAGES[arch]["_debian11"]["libnfnetlink0"],
-            DISTRO_PACKAGES[arch]["_debian11"]["libnetfilter-conntrack3"],
-            DISTRO_PACKAGES[arch]["_debian11"]["libmnl0"],
+            deb_file(arch, "debian11", "iptables"),
+            deb_file(arch, "debian11", "libip4tc2"),
+            deb_file(arch, "debian11", "libip6tc2"),
+            deb_file(arch, "debian11", "libxtables12"),
+            deb_file(arch, "debian11", "libnfnetlink0"),
+            deb_file(arch, "debian11", "libnetfilter-conntrack3"),
+            deb_file(arch, "debian11", "libmnl0"),
         ],
         symlinks = {
           "/usr/sbin/iptables": "/usr/sbin/iptables-legacy",

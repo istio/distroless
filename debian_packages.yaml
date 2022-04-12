@@ -39,6 +39,14 @@
     - "libgcc-s1"
     - "libgomp1"
     - "libstdc++6"
+    # custom
+    - "iptables"
+    - "libip4tc2"
+    - "libip6tc2"
+    - "libxtables12"
+    - "libnfnetlink0"
+    - "libnetfilter-conntrack3"
+    - "libmnl0"
 
 # python and java only build on a subset of architectures
 - distros: ["debian11"]
